@@ -1,0 +1,6 @@
+framework module Pods_CO2Monitor {
+  umbrella header "Pods-CO2Monitor-umbrella.h"
+
+  export *
+  module * { export * }
+}

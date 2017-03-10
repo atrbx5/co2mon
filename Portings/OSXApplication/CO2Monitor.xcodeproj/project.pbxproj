@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		79181C8B34167FBC6D23E9B2 /* Pods_CO2Monitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9692E9B464F393FD1A8FB302 /* Pods_CO2Monitor.framework */; };
+		84AD3A731E73696000454672 /* AirService.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84AD3A671E73696000454672 /* AirService.mm */; };
+		84AD3A741E73696000454672 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD3A691E73696000454672 /* AppDelegate.m */; };
+		84AD3A751E73696000454672 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AD3A6A1E73696000454672 /* Assets.xcassets */; };
+		84AD3A761E73696000454672 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AD3A6B1E73696000454672 /* Main.storyboard */; };
+		84AD3A771E73696000454672 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84AD3A6E1E73696000454672 /* Info.plist */; };
+		84AD3A781E73696000454672 /* libhidapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AD3A6F1E73696000454672 /* libhidapi.a */; };
+		84AD3A7A1E73696000454672 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD3A721E73696000454672 /* ViewController.m */; };
+		84AD3A7E1E736B0F00454672 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD3A7D1E736B0F00454672 /* main.m */; };
+		DC5A68DB457C40D774D391D4 /* Pods_CO2Monitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BF867C5132F13D77DAF0DC /* Pods_CO2Monitor.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		689ED9F3EBD0D50A09D25CF1 /* Pods-CO2Monitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CO2Monitor.release.xcconfig"; path = "Pods/Target Support Files/Pods-CO2Monitor/Pods-CO2Monitor.release.xcconfig"; sourceTree = "<group>"; };
+		6DB7D690844868CA2170652D /* Pods-CO2Monitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CO2Monitor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CO2Monitor/Pods-CO2Monitor.debug.xcconfig"; sourceTree = "<group>"; };
+		7BDD512FFD694E61B970D75A /* Pods-CO2Monitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CO2Monitor.release.xcconfig"; path = "Pods/Target Support Files/Pods-CO2Monitor/Pods-CO2Monitor.release.xcconfig"; sourceTree = "<group>"; };
+		84AD3A661E73696000454672 /* AirService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirService.h; sourceTree = "<group>"; };
+		84AD3A671E73696000454672 /* AirService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AirService.mm; sourceTree = "<group>"; };
+		84AD3A681E73696000454672 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		84AD3A691E73696000454672 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		84AD3A6A1E73696000454672 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84AD3A6C1E73696000454672 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84AD3A6D1E73696000454672 /* hidapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hidapi.h; sourceTree = "<group>"; };
+		84AD3A6E1E73696000454672 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84AD3A6F1E73696000454672 /* libhidapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libhidapi.a; sourceTree = "<group>"; };
+		84AD3A711E73696000454672 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		84AD3A721E73696000454672 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		84AD3A7D1E736B0F00454672 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9692E9B464F393FD1A8FB302 /* Pods_CO2Monitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CO2Monitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBF574191E6058C9006D938A /* CO2Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CO2Monitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1974664C3F0FFA64AF13D6F /* Pods-CO2Monitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CO2Monitor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CO2Monitor/Pods-CO2Monitor.debug.xcconfig"; sourceTree = "<group>"; };
+		F0BF867C5132F13D77DAF0DC /* Pods_CO2Monitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CO2Monitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CBF574161E6058C9006D938A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC5A68DB457C40D774D391D4 /* Pods_CO2Monitor.framework in Frameworks */,
+				84AD3A781E73696000454672 /* libhidapi.a in Frameworks */,
+				79181C8B34167FBC6D23E9B2 /* Pods_CO2Monitor.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84AD3A651E73696000454672 /* CO2Monitor */ = {
+			isa = PBXGroup;
+			children = (
+				84AD3A661E73696000454672 /* AirService.h */,
+				84AD3A671E73696000454672 /* AirService.mm */,
+				84AD3A681E73696000454672 /* AppDelegate.h */,
+				84AD3A691E73696000454672 /* AppDelegate.m */,
+				84AD3A6A1E73696000454672 /* Assets.xcassets */,
+				84AD3A6B1E73696000454672 /* Main.storyboard */,
+				84AD3A6D1E73696000454672 /* hidapi.h */,
+				84AD3A6E1E73696000454672 /* Info.plist */,
+				84AD3A6F1E73696000454672 /* libhidapi.a */,
+				84AD3A711E73696000454672 /* ViewController.h */,
+				84AD3A721E73696000454672 /* ViewController.m */,
+				84AD3A7D1E736B0F00454672 /* main.m */,
+			);
+			path = CO2Monitor;
+			sourceTree = "<group>";
+		};
+		8716C522DC69E7B7CB437E3D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6DB7D690844868CA2170652D /* Pods-CO2Monitor.debug.xcconfig */,
+				7BDD512FFD694E61B970D75A /* Pods-CO2Monitor.release.xcconfig */,
+				D1974664C3F0FFA64AF13D6F /* Pods-CO2Monitor.debug.xcconfig */,
+				689ED9F3EBD0D50A09D25CF1 /* Pods-CO2Monitor.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		93FB755F7B37EB4236D86C7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0BF867C5132F13D77DAF0DC /* Pods_CO2Monitor.framework */,
+				9692E9B464F393FD1A8FB302 /* Pods_CO2Monitor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBF574101E6058C9006D938A = {
+			isa = PBXGroup;
+			children = (
+				84AD3A651E73696000454672 /* CO2Monitor */,
+				CBF5741A1E6058C9006D938A /* Products */,
+				8716C522DC69E7B7CB437E3D /* Pods */,
+				93FB755F7B37EB4236D86C7C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CBF5741A1E6058C9006D938A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CBF574191E6058C9006D938A /* CO2Monitor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CBF574181E6058C9006D938A /* CO2Monitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBF5742D1E6058C9006D938A /* Build configuration list for PBXNativeTarget "CO2Monitor" */;
+			buildPhases = (
+				9E0BE27DBF1338EB59E80EEE /* [CP] Check Pods Manifest.lock */,
+				CBF574151E6058C9006D938A /* Sources */,
+				CBF574161E6058C9006D938A /* Frameworks */,
+				CBF574171E6058C9006D938A /* Resources */,
+				5367BDD9351C4E53566F8290 /* [CP] Embed Pods Frameworks */,
+				EBF069887F0C08B59AB85B15 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CO2Monitor;
+			productName = CO2Monitor;
+			productReference = CBF574191E6058C9006D938A /* CO2Monitor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CBF574111E6058C9006D938A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = pervushyn.a;
+				TargetAttributes = {
+					CBF574181E6058C9006D938A = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CBF574141E6058C9006D938A /* Build configuration list for PBXProject "CO2Monitor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CBF574101E6058C9006D938A;
+			productRefGroup = CBF5741A1E6058C9006D938A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CBF574181E6058C9006D938A /* CO2Monitor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CBF574171E6058C9006D938A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84AD3A751E73696000454672 /* Assets.xcassets in Resources */,
+				84AD3A771E73696000454672 /* Info.plist in Resources */,
+				84AD3A761E73696000454672 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5367BDD9351C4E53566F8290 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CO2Monitor/Pods-CO2Monitor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E0BE27DBF1338EB59E80EEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EBF069887F0C08B59AB85B15 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CO2Monitor/Pods-CO2Monitor-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CBF574151E6058C9006D938A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84AD3A7E1E736B0F00454672 /* main.m in Sources */,
+				84AD3A731E73696000454672 /* AirService.mm in Sources */,
+				84AD3A7A1E73696000454672 /* ViewController.m in Sources */,
+				84AD3A741E73696000454672 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		84AD3A6B1E73696000454672 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84AD3A6C1E73696000454672 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CBF5742B1E6058C9006D938A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CBF5742C1E6058C9006D938A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CBF5742E1E6058C9006D938A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1974664C3F0FFA64AF13D6F /* Pods-CO2Monitor.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CO2Monitor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CO2Monitor",
+					"$(PROJECT_DIR)/CO2Monitor",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rian.CO2Monitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CBF5742F1E6058C9006D938A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 689ED9F3EBD0D50A09D25CF1 /* Pods-CO2Monitor.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CO2Monitor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CO2Monitor",
+					"$(PROJECT_DIR)/CO2Monitor",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rian.CO2Monitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CBF574141E6058C9006D938A /* Build configuration list for PBXProject "CO2Monitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBF5742B1E6058C9006D938A /* Debug */,
+				CBF5742C1E6058C9006D938A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBF5742D1E6058C9006D938A /* Build configuration list for PBXNativeTarget "CO2Monitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBF5742E1E6058C9006D938A /* Debug */,
+				CBF5742F1E6058C9006D938A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CBF574111E6058C9006D938A /* Project object */;
+}
