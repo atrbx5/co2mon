@@ -6,6 +6,7 @@ target 'CO2Monitor' do
   use_frameworks!
 
   # Pods for CO2Monitor
-  pod 'AFNetworking'
+  #pod 'AFNetworking'
+  pod 'FirebaseCommunity/Database'
 
 end

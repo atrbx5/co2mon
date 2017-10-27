@@ -9,3 +9,19 @@
 /graph/graph-temp-1h.png
 /graph/graph.rrd
 
+GoogleService-Info.plist
+
+
+xcshareddata
+
+xcuserdata
+/Gantt (Autosaved).oplx/
+
+*.xcuserstate
+*.xcbkptlist
+*.DS_Store
+.project
+.settings
+Pods
+
+

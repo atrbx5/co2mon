@@ -8,7 +8,9 @@
 
 #import "ViewController.h"
 #import "AirService.h"
-@import AFNetworking;
+//@import AFNetworking;
+#import <FirebaseCommunity/FirebaseCommunity.h>
+#import "FirebaseCommunity/FIRDatabaseReference.h"
 
 @interface ViewController ()<AirServiceDelegate>
 
@@ -24,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [FIRApp configure];
+    
     self.airService = [[AirService alloc] init];
     self.airService.delegate = self;
     [self.airService loop];
@@ -34,21 +38,36 @@
 
 - (void) sendStat {
     
-    if (self.temp != 0 && self.co2 != 0){
+    if (self.temp != 0 && self.co2 != 0) {
         
-        NSString *path = @"http://some.host";
-        NSDictionary *params = @{
-                                 @"temperature": @(self.temp),
-                                 @"co2": @(self.co2)
-                                 };
+        FIRDatabaseReference *ref = [[FIRDatabase database].reference child:@"records"];
         
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-        [manager POST:path parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-            
-        } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"Error: %@", error);
-        }];
+        NSDictionary *post = @{
+                               @"co2": @(self.co2),
+                               @"temp": @(self.temp),
+                               @"date": [NSDate date].description,
+                               };
+        
+        NSDictionary * childUpdates = @{[ref childByAutoId].key: post};
+        
+        [ref updateChildValues:childUpdates
+           withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+               
+           }];
+        
+//        NSString *path = @"http://some.host";
+//        NSDictionary *params = @{
+//                                 @"temperature": @(self.temp),
+//                                 @"co2": @(self.co2)
+//                                 };
+        
+//        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//        [manager POST:path parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+//            
+//        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//            NSLog(@"Error: %@", error);
+//        }];
     }
     
     self.temp = 0;

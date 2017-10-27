@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		79181C8B34167FBC6D23E9B2 /* Pods_CO2Monitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9692E9B464F393FD1A8FB302 /* Pods_CO2Monitor.framework */; };
+		7FDE18F01F88DA3B00F6F3A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FDE18EF1F88DA2300F6F3A5 /* GoogleService-Info.plist */; };
 		84AD3A731E73696000454672 /* AirService.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84AD3A671E73696000454672 /* AirService.mm */; };
 		84AD3A741E73696000454672 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD3A691E73696000454672 /* AppDelegate.m */; };
 		84AD3A751E73696000454672 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AD3A6A1E73696000454672 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		689ED9F3EBD0D50A09D25CF1 /* Pods-CO2Monitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CO2Monitor.release.xcconfig"; path = "Pods/Target Support Files/Pods-CO2Monitor/Pods-CO2Monitor.release.xcconfig"; sourceTree = "<group>"; };
 		6DB7D690844868CA2170652D /* Pods-CO2Monitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CO2Monitor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CO2Monitor/Pods-CO2Monitor.debug.xcconfig"; sourceTree = "<group>"; };
 		7BDD512FFD694E61B970D75A /* Pods-CO2Monitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CO2Monitor.release.xcconfig"; path = "Pods/Target Support Files/Pods-CO2Monitor/Pods-CO2Monitor.release.xcconfig"; sourceTree = "<group>"; };
+		7FDE18EF1F88DA2300F6F3A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84AD3A661E73696000454672 /* AirService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirService.h; sourceTree = "<group>"; };
 		84AD3A671E73696000454672 /* AirService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AirService.mm; sourceTree = "<group>"; };
 		84AD3A681E73696000454672 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		84AD3A651E73696000454672 /* CO2Monitor */ = {
 			isa = PBXGroup;
 			children = (
+				7FDE18EF1F88DA2300F6F3A5 /* GoogleService-Info.plist */,
 				84AD3A661E73696000454672 /* AirService.h */,
 				84AD3A671E73696000454672 /* AirService.mm */,
 				84AD3A681E73696000454672 /* AppDelegate.h */,
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84AD3A751E73696000454672 /* Assets.xcassets in Resources */,
+				7FDE18F01F88DA3B00F6F3A5 /* GoogleService-Info.plist in Resources */,
 				84AD3A771E73696000454672 /* Info.plist in Resources */,
 				84AD3A761E73696000454672 /* Main.storyboard in Resources */,
 			);
@@ -188,9 +192,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CO2Monitor/Pods-CO2Monitor-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCommunity/FirebaseCommunity.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCommunity.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -203,13 +214,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CO2Monitor-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EBF069887F0C08B59AB85B15 /* [CP] Copy Pods Resources */ = {
@@ -356,7 +370,7 @@
 					"$(PROJECT_DIR)/CO2Monitor",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rian.CO2Monitor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rian.weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -375,7 +389,7 @@
 					"$(PROJECT_DIR)/CO2Monitor",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rian.CO2Monitor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rian.weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
