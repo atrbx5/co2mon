@@ -1,9 +1,9 @@
 //
-//  ViewController.swift
-//  WheatherView
+// ViewController.swift
+// WheatherView
 //
-//  Created by Andrey Pervushin on 26.10.2017.
-//  Copyright © 2017 Andrey Pervushin. All rights reserved.
+// Created by Andrey Pervushin on 26.10.2017.
+// Copyright © 2017 Andrey Pervushin. All rights reserved.
 //
 
 import UIKit
@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 class SimpleItem {
     static let dateFormatter = DateFormatter()
+    static let axisDateFormatter = DateFormatter()
     
     var parentKey: String?
     
@@ -57,6 +58,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         SimpleItem.dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZZZ"
+        SimpleItem.axisDateFormatter.dateFormat = "MMM d\n HH:mm"
         
         chartView.delegate = self
         
@@ -75,8 +77,6 @@ class ViewController: UIViewController {
                 date > Calendar(identifier: .gregorian).startOfDay(for: Date().addingTimeInterval(-86400 * 7))
                 else { return }
             
-            self.list.append(snapshot)
-            
             self.listUpdatedAt = Date()
             i += 1
             
@@ -84,7 +84,8 @@ class ViewController: UIViewController {
                 let temp = item.temp
                 else { return }
             
-            self.chartDataItems.append(ChartDataEntry(x: Double(i), y: Double(temp)))
+            self.list.append(snapshot)
+            self.chartDataItems.append(ChartDataEntry(x: date.timeIntervalSince1970, y: Double(temp)))
             
             
         })
@@ -103,27 +104,29 @@ class ViewController: UIViewController {
             }
             
             
-            let chartDataSet = LineChartDataSet(values: self.chartDataItems, label: "Wheather")
+            let chartDataSet = LineChartDataSet(values: self.chartDataItems, label: "Temperature (°C)")
             
             
-            chartDataSet.colors         = [.green]
-            chartDataSet.circleRadius   = 0
+            chartDataSet.colors = [.green]
+            chartDataSet.circleRadius = 0
             chartDataSet.setCircleColor(.red)
             
-            let chartData               = LineChartData()
+            let chartData = LineChartData()
             chartData.addDataSet(chartDataSet)
             chartData.setDrawValues(true)
             
             //gradient fill
             let gradiantColors = [UIColor.cyan.cgColor, UIColor.clear.cgColor] as CFArray
             let colorLocations: [CGFloat] = [1.0, 0.0] //gradient position
-            guard let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradiantColors, locations: colorLocations) else {
+            guard let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradiantColors, locations: colorLocations) else {
                 print("gradient error!")
                 return
             }
-            chartDataSet.fill               = Fill.fillWithLinearGradient(gradient, angle: 90)
-            chartDataSet.drawFilledEnabled  = true
+            chartDataSet.fill = Fill.fillWithLinearGradient(gradient, angle: 90)
+            chartDataSet.drawFilledEnabled = true
             
+            self.chartView.xAxis.valueFormatter = self
+            self.chartView.xAxis.labelPosition = .bottom
             self.chartView.data = chartData
             self.chartView.notifyDataSetChanged()
             
@@ -142,6 +145,16 @@ class ViewController: UIViewController {
         }
         
         self.statusLabel.text = items.joined(separator: "; ")
+    }
+    
+}
+
+extension ViewController: IAxisValueFormatter {
+    
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        let date = Date(timeIntervalSince1970: value)
+        return SimpleItem.axisDateFormatter.string(from: date)
+        
     }
     
 }
