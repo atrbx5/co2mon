@@ -29,14 +29,14 @@ class SimpleItem {
             self.temp = Float(temp)
         }
         if let date = dictionary["date"] as? String {
-        
+            
             self.date = SimpleItem.dateFormatter.date(from: date)
         }
     }
 }
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var chartView: LineChartView!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -45,6 +45,13 @@ class ViewController: UIViewController {
     
     var ref: DatabaseReference?
     var list = [DataSnapshot]()
+    var chartDataItems = [ChartDataEntry]()
+    
+    var listUpdatedAt = Date()
+    
+    var timer: Timer?
+    
+    var mostRecentItem: SimpleItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,27 +60,90 @@ class ViewController: UIViewController {
         
         chartView.delegate = self
         
+        
         ref = Database.database().reference(withPath: "records")
         
+        var i: Int = 0
+        
         ref?.observe(.childAdded, with: { (snapshot) in
-            self.list.append(snapshot)
+            
             let item = SimpleItem(parentKey: snapshot.key,
                                   dictionary: snapshot.value as! [String : AnyObject])
             
-            var items = [String]()
+            guard
+                let date = item.date,
+                date > Calendar(identifier: .gregorian).startOfDay(for: Date().addingTimeInterval(-86400 * 7))
+                else { return }
             
-            if let temp = item.temp {
-                items.append(String(format: "temp: %0.1f°", temp))
-            }
-            if let co2 = item.co2 {
-                items.append(String(format: "co2: %0.0fppm", co2))
-            }
+            self.list.append(snapshot)
             
-            self.statusLabel.text = items.joined(separator: "; ")
+            self.listUpdatedAt = Date()
+            i += 1
+            
+            guard
+                let temp = item.temp
+                else { return }
+            
+            self.chartDataItems.append(ChartDataEntry(x: Double(i), y: Double(temp)))
+            
+            
         })
         
+        timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true, block: { (t) in
+            
+            guard Date().timeIntervalSince(self.listUpdatedAt) > 1 else {
+                return
+            }
+            
+            if let lastSnapHot = self.list.last {
+                
+                let item = SimpleItem(parentKey: lastSnapHot.key,
+                                      dictionary: lastSnapHot.value as! [String : AnyObject])
+                self.updateLabel(item: item)
+            }
+            
+            
+            let chartDataSet = LineChartDataSet(values: self.chartDataItems, label: "Wheather")
+            
+            
+            chartDataSet.colors         = [.green]
+            chartDataSet.circleRadius   = 0
+            chartDataSet.setCircleColor(.red)
+            
+            let chartData               = LineChartData()
+            chartData.addDataSet(chartDataSet)
+            chartData.setDrawValues(true)
+            
+            //gradient fill
+            let gradiantColors = [UIColor.cyan.cgColor, UIColor.clear.cgColor] as CFArray
+            let colorLocations: [CGFloat] = [1.0, 0.0] //gradient position
+            guard let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradiantColors, locations: colorLocations) else {
+                print("gradient error!")
+                return
+            }
+            chartDataSet.fill               = Fill.fillWithLinearGradient(gradient, angle: 90)
+            chartDataSet.drawFilledEnabled  = true
+            
+            self.chartView.data = chartData
+            self.chartView.notifyDataSetChanged()
+            
+        })
     }
-
+    
+    func updateLabel(item: SimpleItem) {
+        
+        var items = [String]()
+        
+        if let temp = item.temp {
+            items.append(String(format: "temp: %0.1f°", temp))
+        }
+        if let co2 = item.co2 {
+            items.append(String(format: "co2: %0.0fppm", co2))
+        }
+        
+        self.statusLabel.text = items.joined(separator: "; ")
+    }
+    
 }
 
 extension ViewController: ChartViewDelegate {
