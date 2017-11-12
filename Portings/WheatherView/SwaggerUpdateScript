@@ -1,0 +1,1 @@
+swagger-codegen generate -l swift4 -i ./swagger.json -c ./config.json -o ./SwaggerClient

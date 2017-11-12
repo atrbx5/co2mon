@@ -8,5 +8,6 @@ target 'WheatherView' do
   pod 'Charts'
   pod 'Firebase'
   pod 'FirebaseDatabase'
+  pod 'SwaggerClient', :path => './SwaggerClient'
 
 end

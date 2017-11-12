@@ -1,0 +1,121 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Reading tracked whater info co2 and C",
+    "version": "1.0.0",
+    "title": "Rian wheather co2 master"
+  },
+  "host": "rianweather.firebaseio.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "record",
+      "description": "Single tracked record"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/records.json": {
+      "get": {
+        "tags": [
+          "record"
+        ],
+        "summary": "Read all tracked records",
+        "description": "Filter by date",
+        "operationId": "list",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "print",
+            "in": "query",
+            "description": "json prety print",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "notFormated",
+                "pretty",
+                "silent"
+              ],
+              "default": "pretty"
+            },
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "type": "string",
+            "description": "date (json primitive string) with quotes",
+            "default": "date"
+          },
+          {
+            "name": "startAt",
+            "in": "query",
+            "type": "string",
+            "description": "date (json primitive string) with quotes",
+            "default": "2017-11-11 13"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Record"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Record": {
+      "type": "object",
+      "required": [
+        "co2",
+        "temp",
+        "date"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "co2": {
+          "type": "number"
+        },
+        "temp": {
+          "type": "number"
+        },
+        "date": {
+          "type": "string"
+        }
+      }
+    },
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -12,6 +12,8 @@
 		7F3713501FA1985400E37DC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F37134E1FA1985400E37DC0 /* Main.storyboard */; };
 		7F3713521FA1985400E37DC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F3713511FA1985400E37DC0 /* Assets.xcassets */; };
 		7F3713551FA1985400E37DC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F3713531FA1985400E37DC0 /* LaunchScreen.storyboard */; };
+		7F975EC21FB86DD0000F5882 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F975EC01FB86DD0000F5882 /* DataModel.xcdatamodeld */; };
+		7F975EC31FB8902D000F5882 /* DataModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 7F975EC01FB86DD0000F5882 /* DataModel.xcdatamodeld */; };
 		94468A7860FA118A5B1B578C /* Pods_WheatherView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9210389C2A5B42B4A2354517 /* Pods_WheatherView.framework */; };
 		CBCBA0FF1FA312CD004722BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBCBA0FE1FA312CD004722BA /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -26,6 +28,7 @@
 		7F3713511FA1985400E37DC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F3713541FA1985400E37DC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F3713561FA1985400E37DC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F975EC11FB86DD0000F5882 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		9210389C2A5B42B4A2354517 /* Pods_WheatherView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WheatherView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCBA0FE1FA312CD004722BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +81,7 @@
 				7F3713511FA1985400E37DC0 /* Assets.xcassets */,
 				7F3713531FA1985400E37DC0 /* LaunchScreen.storyboard */,
 				7F3713561FA1985400E37DC0 /* Info.plist */,
+				7F975EC01FB86DD0000F5882 /* DataModel.xcdatamodeld */,
 			);
 			path = WheatherView;
 			sourceTree = "<group>";
@@ -153,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F975EC31FB8902D000F5882 /* DataModel.xcdatamodeld in Resources */,
 				7F3713551FA1985400E37DC0 /* LaunchScreen.storyboard in Resources */,
 				CBCBA0FF1FA312CD004722BA /* GoogleService-Info.plist in Resources */,
 				7F3713521FA1985400E37DC0 /* Assets.xcassets in Resources */,
@@ -178,7 +183,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CEAB5E188D05FB8EEF61E354 /* [CP] Embed Pods Frameworks */ = {
@@ -188,14 +193,20 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WheatherView/Pods-WheatherView-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SwaggerClient/SwaggerClient.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwaggerClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F975EC21FB86DD0000F5882 /* DataModel.xcdatamodeld in Sources */,
 				7F37134D1FA1985400E37DC0 /* ViewController.swift in Sources */,
 				7F37134B1FA1985300E37DC0 /* AppDelegate.swift in Sources */,
 			);
@@ -367,6 +379,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TM625TN94H;
 				INFOPLIST_FILE = WheatherView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rian.weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -383,6 +396,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TM625TN94H;
 				INFOPLIST_FILE = WheatherView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rian.weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,6 +427,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7F975EC01FB86DD0000F5882 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7F975EC11FB86DD0000F5882 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 7F975EC11FB86DD0000F5882 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7F37133F1FA1985300E37DC0 /* Project object */;
 }
